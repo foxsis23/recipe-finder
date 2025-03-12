@@ -11,3 +11,7 @@ Clone repository -> ```npm i``` and then ```npm run dev```
 3. You will be redirected to the result page.
 4. Select the dish you want, and click on it to view the details page.
 
+## Overview
+1. I used suspense to manage loading state
+2. Route handlers to fetch data from API
+3. Tailwindcss for styling
