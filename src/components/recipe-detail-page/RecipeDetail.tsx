@@ -7,18 +7,24 @@ interface RecipeDetailProps {
 
 export const RecipeDetail = ({ recipe }: RecipeDetailProps) => {
   return (
-    <div className="flex flex-col justify-center items-center max-w-xl w-full mx-auto mt-20 bg-white rounded-md shadow-md p-4">
+    <div className="flex flex-col justify-center items-center max-w-2xl w-full mx-auto mt-20 bg-white rounded-lg shadow-xl p-6 space-y-6">
       <Image
         src={recipe.image}
         alt={`recipe-${recipe.title}`}
-        width="300"
-        height="300"
+        width="400"
+        height="400"
+        className="rounded-lg shadow-md object-cover"
       />
-      <h1 className="text-2xl font-bold">{recipe.title}</h1>
-      <p className="text-xl self-start">Ingredients:</p>
-      <ul className="flex flex-col gap-2 self-start">
+      <h1 className="text-3xl font-semibold text-gray-800">{recipe.title}</h1>
+      <p className="text-xl text-gray-700">Ingredients:</p>
+      <ul className="flex flex-col gap-2 text-lg text-gray-600">
         {recipe.extendedIngredients.map((ingredient) => (
-          <li key={ingredient.id}>{ingredient.name}</li>
+          <li
+            key={ingredient.id}
+            className="flex items-center gap-2 p-2 border-b border-gray-200 hover:bg-gray-100 rounded-md"
+          >
+            <span>{ingredient.name}</span>
+          </li>
         ))}
       </ul>
     </div>
